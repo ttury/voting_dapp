@@ -9,7 +9,7 @@ candidates = {"Rama": "candidate-1", "Nick": "candidate-2", "Jose": "candidate-3
 function voteForCandidate(candidate) {
     candidateName = $("#candidate").val();
 
-    contractInstance.voteForCandidate(candidateName, (from: web3.eth.accounts[0], gas: 4700000}, function() {
+    contractInstance.voteForCandidate(candidateName, {from: web3.eth.accounts[0], gas: 4700000}, function() {
         let div_id = candidates[candidateName]
         $("#" + div_id).html(contractInstance.totalVotesFor.call(candidateName).toString());
     });
